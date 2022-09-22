@@ -1,6 +1,6 @@
-# Bridge skeleton ???
+# Bridge skeleton ☠
 
-> ??????  This skeleton is a recommendation. You can use any framework or library.
+> ⚠️  This skeleton is a recommendation. You can use any framework or library.
 
 ## Development
 
@@ -74,7 +74,7 @@ Asynchronous steps
 ```
 {
     source: 'source-user-signer-handle',
-    target: 'target-user-wallet-handle', 
+    target: 'target-user-wallet-handle', // take a look 
     amount: '1000.00',
     domain: 'tin'
 }
