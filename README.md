@@ -2,13 +2,17 @@
 
 > ⚠️  This skeleton is a recommendation. You can use any framework or library.
 
+## Resources
+
+Bank Credentials: https://docs.google.com/spreadsheets/d/1Ajgv8iSDiRuKglbRFhIIdjMwTpNQBvTmAW5g0bK4mUk/edit?usp=sharing
+
 ## Development
 
     $ npm install
 
     $ npm run dev 
 
-## Tasks
+## Tasks to build a bridge
 
 ### Debit
 
@@ -86,7 +90,7 @@ Asynchronous steps (optional, nice to have - offline signing)
 ```
 {
     source: 'source-user-signer-handle',
-    target: 'target-user-wallet-handle', 
+    target: 'target-user-wallet-handle', // take a look 
     amount: '1000.00',
     domain: 'tin'
 }
@@ -107,10 +111,14 @@ Asynchronous steps (optional, nice to have - offline signing)
 
 For signing process there is an example on _./src/services/crypto/example.js_ module. Use this in case you are using offline signing.
 
+> run this example to see IOU structure `node ./src/services/crypto/example.js`
+
 
 ## Endpoints
 
-### Transfer endpoint
+Postman collection https://www.getpostman.com/collections/3aceb4ec82467a2ac929
+
+### Transfer
 
 Create transfer
 
@@ -124,7 +132,7 @@ Get transfer
 
 * GET /v1/transfer/?transferId={transferId}
 
-### Action endpoint
+### Action
 
 Create action
 
