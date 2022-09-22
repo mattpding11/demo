@@ -1,0 +1,21 @@
+{
+  "name": "minka-hackathon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "node-dev --respawn src/main.js"
+  },
+  "keywords": [],
+  "author": "Arnold Gandarillas Castillo",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.2",
+    "elliptic": "^6.5.4",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "node-dev": "^7.4.3"
+  }
+}
