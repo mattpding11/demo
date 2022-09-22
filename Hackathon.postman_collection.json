@@ -1,0 +1,1815 @@
+{
+	"info": {
+		"_postman_id": "0c3dada5-1517-42a6-b794-870c07c67b84",
+		"name": "Hackathon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10067697"
+	},
+	"item": [
+		{
+			"name": "Wallet",
+			"item": [
+				{
+					"name": "update bank wallet",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "callBackUrl",
+									"type": "any"
+								},
+								{
+									"key": "authUrl",
+									"type": "any"
+								},
+								{
+									"key": "accessTokenUrl",
+									"type": "any"
+								},
+								{
+									"key": "clientId",
+									"type": "any"
+								},
+								{
+									"key": "clientSecret",
+									"type": "any"
+								},
+								{
+									"key": "clientAuth",
+									"type": "any"
+								},
+								{
+									"key": "grantType",
+									"type": "any"
+								},
+								{
+									"key": "scope",
+									"type": "any"
+								},
+								{
+									"key": "username",
+									"type": "any"
+								},
+								{
+									"key": "password",
+									"type": "any"
+								},
+								{
+									"key": "redirectUri",
+									"type": "any"
+								},
+								{
+									"key": "refreshToken",
+									"type": "any"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"labels\": {\n        \"routerAction\": \"{{bank_url}}/action\",\n        \"routerUpload\": \"{{bank_url}}/debit\",\n        \"routerStatus\": \"{{bank_url}}/status\",\n        \"routerDownload\": \"{{bank_url}}/credit\"\n    },\n    \"signer\": [\n        \"wYQKmo9q6Jayu1EfgC1CLUHA67aEJRU6hE\"\n    ],\n    \"default\": \"wYQKmo9q6Jayu1EfgC1CLUHA67aEJRU6hE\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/wallet/$bank_hackathon_01",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"wallet",
+								"$bank_hackathon_01"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Signer",
+			"item": [
+				{
+					"name": "update signer",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "callBackUrl",
+									"type": "any"
+								},
+								{
+									"key": "authUrl",
+									"type": "any"
+								},
+								{
+									"key": "accessTokenUrl",
+									"type": "any"
+								},
+								{
+									"key": "clientId",
+									"type": "any"
+								},
+								{
+									"key": "clientSecret",
+									"type": "any"
+								},
+								{
+									"key": "clientAuth",
+									"type": "any"
+								},
+								{
+									"key": "grantType",
+									"type": "any"
+								},
+								{
+									"key": "scope",
+									"type": "any"
+								},
+								{
+									"key": "username",
+									"type": "any"
+								},
+								{
+									"key": "password",
+									"type": "any"
+								},
+								{
+									"key": "redirectUri",
+									"type": "any"
+								},
+								{
+									"key": "refreshToken",
+									"type": "any"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"labels\": {\n        \"routerReference\": \"$bank_hackathon_01\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/signer/wixqv7M8e8e45pB3udqye9qwamuWguXjJF",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"signer",
+								"wixqv7M8e8e45pB3udqye9qwamuWguXjJF"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Action",
+			"item": [
+				{
+					"name": "create action",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"ACTION_ID\", function () {",
+									"    const action = pm.response.json();",
+									"    const actionId = action.action_id;",
+									"",
+									"    pm.globals.set(\"ACTION_ID\", actionId);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "callBackUrl",
+									"type": "any"
+								},
+								{
+									"key": "authUrl",
+									"type": "any"
+								},
+								{
+									"key": "clientAuth",
+									"type": "any"
+								},
+								{
+									"key": "grantType",
+									"type": "any"
+								},
+								{
+									"key": "scope",
+									"type": "any"
+								},
+								{
+									"key": "username",
+									"type": "any"
+								},
+								{
+									"key": "password",
+									"type": "any"
+								},
+								{
+									"key": "redirectUri",
+									"type": "any"
+								},
+								{
+									"key": "refreshToken",
+									"type": "any"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"source\": \"wWgzDhFbuHaxuJ52DgJ11QE3vw7zkUKXUS\",\n      \"target\": \"wWeBKSMFHTodYRvUE45bNV4cyGoCbJS9se\",\n      \"amount\": \"10\",\n      \"symbol\": \"$tin\",\n      \"labels\": {\n            \"tx_ref\": \"{{TRANSFER_ID}}\",\n            \"type\": \"UPLOAD\",\n            \"sourceChannel\": \"APP\",\n            \"transactionPurpose\": \"TRANSFER\",\n            \"description\": \"Send\",\n            \"domain\": \"tin\",\n            \"deviceFingerPrint\": {\n                  \"hash\": \"hash\",\n                  \"ipAddress\": \"127.0.0.1\",\n                  \"country\": \"NONE\",\n                  \"city\": \"NONE\",\n                  \"mobileDevice\": \"NONE\",\n                  \"SIMCardId\": \"39933\",\n                  \"model\": \"MODEL\",\n                  \"operator\": \"Movii\"\n            },\n            \"numberOfTransactions\": \"1\"\n      }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/action",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"action"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign action - online",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "{{tClientSecret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{tClientId}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{url}}/oauth/token",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "callBackUrl",
+									"type": "any"
+								},
+								{
+									"key": "authUrl",
+									"type": "any"
+								},
+								{
+									"key": "clientAuth",
+									"type": "any"
+								},
+								{
+									"key": "grantType",
+									"type": "any"
+								},
+								{
+									"key": "scope",
+									"type": "any"
+								},
+								{
+									"key": "username",
+									"type": "any"
+								},
+								{
+									"key": "password",
+									"type": "any"
+								},
+								{
+									"key": "redirectUri",
+									"type": "any"
+								},
+								{
+									"key": "refreshToken",
+									"type": "any"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{tApiKey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/action/{{UPLOAD_ACTION_ID}}/signed",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"action",
+								"{{UPLOAD_ACTION_ID}}",
+								"signed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign action - offline",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "callBackUrl",
+									"type": "any"
+								},
+								{
+									"key": "authUrl",
+									"type": "any"
+								},
+								{
+									"key": "accessTokenUrl",
+									"type": "any"
+								},
+								{
+									"key": "clientId",
+									"type": "any"
+								},
+								{
+									"key": "clientSecret",
+									"type": "any"
+								},
+								{
+									"key": "clientAuth",
+									"type": "any"
+								},
+								{
+									"key": "grantType",
+									"type": "any"
+								},
+								{
+									"key": "scope",
+									"type": "any"
+								},
+								{
+									"key": "username",
+									"type": "any"
+								},
+								{
+									"key": "password",
+									"type": "any"
+								},
+								{
+									"key": "redirectUri",
+									"type": "any"
+								},
+								{
+									"key": "refreshToken",
+									"type": "any"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"hash\": {\n        \"types\": \"sha256:sha256\",\n        \"steps\": \"stringify:data\",\n        \"value\": \"86bd1dfef44fc1e4f22d733c2cd3163db23e113aacc7f8b757eb244e7f293350\"\n    },\n    \"data\": {\n        \"amount\": \"10000.00\",\n        \"domain\": \"tin\",\n        \"expiry\": \"2022-08-21T06:53:40.034Z\",\n        \"random\": \"541c208f9080f15655dd\",\n        \"source\": \"wf6BYRmgVygFYk9b51YuEYbsxVJufNHZXb\",\n        \"symbol\": \"wcMFE2uesgAqzoMvuViXWT3iyUreHygAe6\",\n        \"target\": \"wXPa3ePUCkyS18BgUF4qvLEMvYm9ZLoGyZ\"\n    },\n    \"meta\": {\n        \"signatures\": [\n            {\n                \"scheme\": \"eddsa-ed25519\",\n                \"signer\": \"wf6BYRmgVygFYk9b51YuEYbsxVJufNHZXb\",\n                \"public\": \"cbf89c42cd10357ed81db6b02308efbdf5ef42c04e14d50bbee9d19ac9c2c09c\",\n                \"string\": \"93B9D34BAA0CCE466756D726308E7E64BEC0A164AF22AED1B1E6453436EDB3954C1B53FA84C204D69719379B6E1D56E90E011D197C8EAA6B8E6037F3B46D010A\",\n                \"linker\": \"sha256:ripemd160\"\n            }\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/action/{{UPLOAD_ACTION_ID}}/sendit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"action",
+								"{{UPLOAD_ACTION_ID}}",
+								"sendit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "00. get access token",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json()",
+							"const accessToken = response.access_token",
+							"",
+							"pm.globals.set(\"ACCESS_TOKEN\", accessToken)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/oauth/token",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "01. create bank signer",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnQiOiIkYmFuY29hbWFyaWxsbyIsImNsaWVudElkIjoiYzgxYTVlMTcyNDIxNDY3YWFlMGFjOGEyYzNmM2VmMzIiLCJvcmdhbml6YXRpb24iOiIkYmFuY29hbWFyaWxsbyIsImRvbWFpbiI6IiR0aW4iLCJyZWFsbSI6Im9yZ2FuaXphdGlvbiIsInNjb3BlcyI6WyJtYW5hZ2VfdXNlcl93YWxsZXRzIiwibWFuYWdlX293bl9yZXNvdXJjZXMiLCJtYW5hZ2Vfb3JnYW5pemF0aW9uX3dhbGxldHMiXSwiaWF0IjoxNTk2NjY0NTQ0LCJleHAiOjE1OTY2NjgxNDQsImlzcyI6Imh0dHBzOi8vbWlua2EuaW8ifQ.x4D9AUBdLN-h-zO9ViV9g6SV8wRW9DuByf8vr85QpJeG6WZNUa0It6AGXi1lPlSt7EXpJKRf-L5ogJnzf9hpaCsEOe81DeupyX_X7yX1lrW3pdssQbn2gZW6y22ZtJ7okU-PlFdq1s3UY7bvxi_HkLfhAF64542TV9BQ4NBACafrGPclpNjRrWgF_b__2W8wNcLQSIaOYgWAysZqT9dPXko8BFZUqlEe5AvkK8L4-fu_mX6AEmxGY3NrzXkQHCbBx5RVc4UBeX1BYFLebz1WjtFnN_Mqg0e9Fqu2VDYXTzNrQ19wc5YAILLPW0I-frS-0l_rfbkECwvc5rNKYJZTSFgxn6u3dIYadL6wjJArafnUjRw_klXptcBWjwNjDrxKUaZqKEQ02GW9LLjTECj48hyG_i_aRhVFbAvg1-X5Ut7sVTw3YCr1b4-yeXsHeF_od09ytivT4LjcBT3vJYcC1bWQ8GkLAunZUj4s-FoaulvD_9Snh6CV4DAP_NjIOm--bUyfDuPygNqKlVrPSAD56gCtSsqi5e5j4gFujUOw85wwqWV7O2Z0JEr_4VcqH2Bkj87Al3OxowP3iGd8aPRnFaQF1ZAnyZBsdupDyoJielY3LoqD_RV1Z2Rt2SdBkztP-sR4SkQS6T9PJA-vgmazFFfNCbwUghc739E-v7yXOT4",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "callBackUrl",
+							"type": "any"
+						},
+						{
+							"key": "authUrl",
+							"type": "any"
+						},
+						{
+							"key": "accessTokenUrl",
+							"type": "any"
+						},
+						{
+							"key": "clientId",
+							"type": "any"
+						},
+						{
+							"key": "clientSecret",
+							"type": "any"
+						},
+						{
+							"key": "clientAuth",
+							"type": "any"
+						},
+						{
+							"key": "grantType",
+							"type": "any"
+						},
+						{
+							"key": "scope",
+							"type": "any"
+						},
+						{
+							"key": "username",
+							"type": "any"
+						},
+						{
+							"key": "password",
+							"type": "any"
+						},
+						{
+							"key": "redirectUri",
+							"type": "any"
+						},
+						{
+							"key": "refreshToken",
+							"type": "any"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"labels\": {\n        \"type\": \"TROUPE\",\n        \"bankName\": \"Banco Hackathon 01\",\n        \"bankBicfi\": \"0804\",\n        \"routerReference\": \"$bank_hackathon_01\",\n        \"description\": \"Banco Hackathon\"\n    }\n}"
+				},
+				"url": {
+					"raw": "{{url}}/v1/signer",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"signer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02. create bank wallet",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnQiOiIkYmFuY29hbWFyaWxsbyIsImNsaWVudElkIjoiYzgxYTVlMTcyNDIxNDY3YWFlMGFjOGEyYzNmM2VmMzIiLCJvcmdhbml6YXRpb24iOiIkYmFuY29hbWFyaWxsbyIsImRvbWFpbiI6IiR0aW4iLCJyZWFsbSI6Im9yZ2FuaXphdGlvbiIsInNjb3BlcyI6WyJtYW5hZ2VfdXNlcl93YWxsZXRzIiwibWFuYWdlX293bl9yZXNvdXJjZXMiLCJtYW5hZ2Vfb3JnYW5pemF0aW9uX3dhbGxldHMiXSwiaWF0IjoxNTk2NjY0NTQ0LCJleHAiOjE1OTY2NjgxNDQsImlzcyI6Imh0dHBzOi8vbWlua2EuaW8ifQ.x4D9AUBdLN-h-zO9ViV9g6SV8wRW9DuByf8vr85QpJeG6WZNUa0It6AGXi1lPlSt7EXpJKRf-L5ogJnzf9hpaCsEOe81DeupyX_X7yX1lrW3pdssQbn2gZW6y22ZtJ7okU-PlFdq1s3UY7bvxi_HkLfhAF64542TV9BQ4NBACafrGPclpNjRrWgF_b__2W8wNcLQSIaOYgWAysZqT9dPXko8BFZUqlEe5AvkK8L4-fu_mX6AEmxGY3NrzXkQHCbBx5RVc4UBeX1BYFLebz1WjtFnN_Mqg0e9Fqu2VDYXTzNrQ19wc5YAILLPW0I-frS-0l_rfbkECwvc5rNKYJZTSFgxn6u3dIYadL6wjJArafnUjRw_klXptcBWjwNjDrxKUaZqKEQ02GW9LLjTECj48hyG_i_aRhVFbAvg1-X5Ut7sVTw3YCr1b4-yeXsHeF_od09ytivT4LjcBT3vJYcC1bWQ8GkLAunZUj4s-FoaulvD_9Snh6CV4DAP_NjIOm--bUyfDuPygNqKlVrPSAD56gCtSsqi5e5j4gFujUOw85wwqWV7O2Z0JEr_4VcqH2Bkj87Al3OxowP3iGd8aPRnFaQF1ZAnyZBsdupDyoJielY3LoqD_RV1Z2Rt2SdBkztP-sR4SkQS6T9PJA-vgmazFFfNCbwUghc739E-v7yXOT4",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "callBackUrl",
+							"type": "any"
+						},
+						{
+							"key": "authUrl",
+							"type": "any"
+						},
+						{
+							"key": "accessTokenUrl",
+							"type": "any"
+						},
+						{
+							"key": "clientId",
+							"type": "any"
+						},
+						{
+							"key": "clientSecret",
+							"type": "any"
+						},
+						{
+							"key": "clientAuth",
+							"type": "any"
+						},
+						{
+							"key": "grantType",
+							"type": "any"
+						},
+						{
+							"key": "scope",
+							"type": "any"
+						},
+						{
+							"key": "username",
+							"type": "any"
+						},
+						{
+							"key": "password",
+							"type": "any"
+						},
+						{
+							"key": "redirectUri",
+							"type": "any"
+						},
+						{
+							"key": "refreshToken",
+							"type": "any"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"handle\": \"$bank_hackathon_01\",\n    \"default\": \"wixqv7M8e8e45pB3udqye9qwamuWguXjJF\",\n    \"signer\": [\n        \"wixqv7M8e8e45pB3udqye9qwamuWguXjJF\"\n    ],\n    \"labels\": {\n        \"domain\": \"tin\",\n        \"type\": \"TROUPE\",\n        \"bankName\": \"$bank_hackathon_01\",\n        \"routerAction\": \"{{bank_url}}/action\",\n        \"routerUpload\": \"{{bank_url}}/debit\",\n        \"routerStatus\": \"{{bank_url}}/status\",\n        \"routerDownload\": \"{{bank_url}}/credit\",\n        \"routerAuthMethod\": \"NONE\"\n    }\n}"
+				},
+				"url": {
+					"raw": "{{url}}/v1/wallet/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"wallet",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03. create user signer",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessTokenUrl",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnQiOiJVRks2WTFFOWQ4RnFxZG96MjhiSCIsImNsaWVudElkIjoiZjdjRDIxMWUyQmVCQ2RiMzczREFkMEQzMjM4ZEZDMjUiLCJvcmdhbml6YXRpb24iOiJVRks2WTFFOWQ4RnFxZG96MjhiSCIsImRvbWFpbiI6IiR0aW4iLCJyZWFsbSI6Im9yZ2FuaXphdGlvbiIsInNjb3BlcyI6WyJtYW5hZ2Vfb3duX3Jlc291cmNlcyJdLCJpYXQiOjE2MDQ1MDE3NzcsImV4cCI6MTYwNDUwNTM3NywiaXNzIjoiaHR0cHM6Ly9taW5rYS5pbyJ9.SNmMzZhZiokLY53s6P-FxZW8AyKCqHG8ZAtJ9D97kJjqHQxypFrY0zAApSYFzIm-BMo-9uoinu6YlEz6zQL7Uw",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "callBackUrl",
+							"type": "any"
+						},
+						{
+							"key": "authUrl",
+							"type": "any"
+						},
+						{
+							"key": "clientAuth",
+							"type": "any"
+						},
+						{
+							"key": "grantType",
+							"type": "any"
+						},
+						{
+							"key": "scope",
+							"type": "any"
+						},
+						{
+							"key": "username",
+							"type": "any"
+						},
+						{
+							"key": "password",
+							"type": "any"
+						},
+						{
+							"key": "redirectUri",
+							"type": "any"
+						},
+						{
+							"key": "refreshToken",
+							"type": "any"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"labels\": {\n            \"firstName\": \"{{$randomFirstName}}\",\n            \"lastName\": \"{{$randomLastName}}\",\n            \"type\": \"PERSON\",\n            \"description\": \"{{$randomJobDescriptor}}\",\n            \"email\": \"{{$randomEmail}}\",\n            \"identification\": \"{{$randomInt}}\",\n            \"bankAccountNumber\": \"{{$randomInt}}\",\n            \"bankAccountType\": \"SVGS\",\n            \"bankBicfi\": \"1010\",\n            \"countryOfResidence\": \"CO\",\n            \"proprietary\": \"CC\",\n            \"bankName\": \"Banco Hachathon 01\",\n            \"routerReference\": \"$bank_hackathon_01\",\n            \"mobile\": \"573020103433\"\n      }\n}"
+				},
+				"url": {
+					"raw": "{{url}}/v1/signer",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"signer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04. create user wallet",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnQiOiJVRks2WTFFOWQ4RnFxZG96MjhiSCIsImNsaWVudElkIjoiZjdjRDIxMWUyQmVCQ2RiMzczREFkMEQzMjM4ZEZDMjUiLCJvcmdhbml6YXRpb24iOiJVRks2WTFFOWQ4RnFxZG96MjhiSCIsImRvbWFpbiI6IiR0aW4iLCJyZWFsbSI6Im9yZ2FuaXphdGlvbiIsInNjb3BlcyI6WyJtYW5hZ2Vfb3duX3Jlc291cmNlcyJdLCJpYXQiOjE2MDQ1MDE3NzcsImV4cCI6MTYwNDUwNTM3NywiaXNzIjoiaHR0cHM6Ly9taW5rYS5pbyJ9.SNmMzZhZiokLY53s6P-FxZW8AyKCqHG8ZAtJ9D97kJjqHQxypFrY0zAApSYFzIm-BMo-9uoinu6YlEz6zQL7Uw",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "callBackUrl",
+							"type": "any"
+						},
+						{
+							"key": "authUrl",
+							"type": "any"
+						},
+						{
+							"key": "accessTokenUrl",
+							"type": "any"
+						},
+						{
+							"key": "clientId",
+							"type": "any"
+						},
+						{
+							"key": "clientSecret",
+							"type": "any"
+						},
+						{
+							"key": "clientAuth",
+							"type": "any"
+						},
+						{
+							"key": "grantType",
+							"type": "any"
+						},
+						{
+							"key": "scope",
+							"type": "any"
+						},
+						{
+							"key": "username",
+							"type": "any"
+						},
+						{
+							"key": "password",
+							"type": "any"
+						},
+						{
+							"key": "redirectUri",
+							"type": "any"
+						},
+						{
+							"key": "refreshToken",
+							"type": "any"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"handle\": \"$573020103433\",\n  \"labels\": {\n    \"type\": \"PERSON\",\n    \"channelSms\": \"573020103433\"\n  },\n  \"signer\": [\n      \"wft7DKeetNG65QMniA854ZQ7ZHqB67TB66\"\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{url}}/v1/wallet",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05. get signer",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "{{ACCESS_TOKEN}}",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "callBackUrl",
+							"type": "any"
+						},
+						{
+							"key": "authUrl",
+							"type": "any"
+						},
+						{
+							"key": "accessTokenUrl",
+							"type": "any"
+						},
+						{
+							"key": "clientId",
+							"type": "any"
+						},
+						{
+							"key": "clientSecret",
+							"type": "any"
+						},
+						{
+							"key": "clientAuth",
+							"type": "any"
+						},
+						{
+							"key": "grantType",
+							"type": "any"
+						},
+						{
+							"key": "scope",
+							"type": "any"
+						},
+						{
+							"key": "username",
+							"type": "any"
+						},
+						{
+							"key": "password",
+							"type": "any"
+						},
+						{
+							"key": "redirectUri",
+							"type": "any"
+						},
+						{
+							"key": "refreshToken",
+							"type": "any"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{api_key}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/v1/signer/wft7DKeetNG65QMniA854ZQ7ZHqB67TB66",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"signer",
+						"wft7DKeetNG65QMniA854ZQ7ZHqB67TB66"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "06. get wallet",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessTokenUrl",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "{{ACCESS_TOKEN}}",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "callBackUrl",
+							"type": "any"
+						},
+						{
+							"key": "authUrl",
+							"type": "any"
+						},
+						{
+							"key": "clientAuth",
+							"type": "any"
+						},
+						{
+							"key": "grantType",
+							"type": "any"
+						},
+						{
+							"key": "scope",
+							"type": "any"
+						},
+						{
+							"key": "username",
+							"type": "any"
+						},
+						{
+							"key": "password",
+							"type": "any"
+						},
+						{
+							"key": "redirectUri",
+							"type": "any"
+						},
+						{
+							"key": "refreshToken",
+							"type": "any"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{api_key}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/v1/wallet/$573020103433",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"wallet",
+						"$573020103433"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "07. create transfer",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"TRANSFER_ID\", function () {",
+							"    const transfer = pm.response.json();",
+							"    const transferId = transfer.labels.tx_ref;",
+							"",
+							"    pm.globals.set(\"TRANSFER_ID\", transferId);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnQiOiIkYmFuY29hbWFyaWxsbyIsImNsaWVudElkIjoiYTIyYmFiYTg4MTBiY2I4ZTIyMDVhNjVmNWZhNGM4ZTUiLCJvcmdhbml6YXRpb24iOiIkYmFuY29hbWFyaWxsbyIsImRvbWFpbiI6IiR0aW4iLCJyZWFsbSI6Im9yZ2FuaXphdGlvbiIsInNjb3BlcyI6WyJtYW5hZ2Vfb3duX3Jlc291cmNlcyJdLCJpYXQiOjE2MDU4MjA5NjcsImV4cCI6MTYwNTgyNDU2NywiaXNzIjoiaHR0cHM6Ly9taW5rYS5pbyJ9.smIpAyIf5X2DqxMjbAeXnAzyxmz6LMuKSSTa5u10C2Q2SJ50gX6Kg0MeaKYh_Qtu-ocphH_OY4fn_CTiuVPkdUYpP7wCOwhbrZ0i0GVru4nfebUDPZ2sNGgjpS_PRMCHD2CY8F4tjvC-4iSfuDxy0EnBGh4RViUb9rk7CRfq2OF4_XicLwv2xSUrru7QZJ7WtZS0pjtT-y5_Cdt5gsh3XrHYGytECAFdnBN5BiwfDls6dPBORCfWXAP8RD3iYghfX8pvutu1HDwpd-7w-iNCGeepR9Rw54R9riTMRXZembPPLesdQoURd6y4YfS1M5HxCtyIRCbJulw38yLy5NEpGJ7hfcOfdqawghiTxyNFA5KRXf0EQ4GEx1x-z63BNJ34fdqMsyXMTDjBf7jdiEeeOgj9qrgLvtnCfGlPZ4y2QoLSTNZZpEtudaWn0sEOExIwIUvGwFUUQitQguimpTUEYuguYwzyY646gawnxSuzBAFZ3GnCC006CxTZ71iB8NfRvJXtVm9dogTPCAoCoBcRKGh6Dspa4emuNc498CfOSmvxHBsTAYynMO1ARG5nhfWJzaaFzlDUwnHhv1-k9K7Upja7r0lb8EyJrC0sPz_9K-hnxjoJZKYRsbhknseS-rP6TB7OsWVe3Yu2Q6PH4Lqr6-R28El08svZzCdrOlOgdWw",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "callBackUrl",
+							"type": "any"
+						},
+						{
+							"key": "authUrl",
+							"type": "any"
+						},
+						{
+							"key": "clientAuth",
+							"type": "any"
+						},
+						{
+							"key": "grantType",
+							"type": "any"
+						},
+						{
+							"key": "scope",
+							"type": "any"
+						},
+						{
+							"key": "username",
+							"type": "any"
+						},
+						{
+							"key": "password",
+							"type": "any"
+						},
+						{
+							"key": "redirectUri",
+							"type": "any"
+						},
+						{
+							"key": "refreshToken",
+							"type": "any"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{api_key}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"source\": \"wft7DKeetNG65QMniA854ZQ7ZHqB67TB66\",\n    \"target\": \"$573174277580\",\n    \"symbol\": \"$tin\",\n    \"amount\": \"10000\",\n    \"labels\": {\n        \"type\": \"SEND\",\n        \"description\": \"Send\",\n        \"domain\": \"tin\",\n        \"deviceFingerPrint\": {\n            \"city\": \"Bogota\",\n            \"hash\": \"26fff5af6441fbe15a71e8a62c361714484b1b3083d9e8eb6aca85e2a7e0dc58\",\n            \"model\": \"Huawei Mate 20 Pro\",\n            \"country\": \"Colombia\",\n            \"operator\": \"Bharti Airtel Limited\",\n            \"SIMCardId\": \"89933320111320222\",\n            \"ipAddress\": \"1111:0000:1111:0000:0000:2222:0370:1111\",\n            \"mobileDevice\": \"99000086244444\"\n        },\n        \"transactionPurpose\": \"TRANSFER\",\n        \"numberOfTransactions\": 1,\n        \"sourceChannel\": \"APP\"\n    }\n}"
+				},
+				"url": {
+					"raw": "{{url}}/v1/transfer",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "08. get list of transfers",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "body",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "{{url}}/oauth/authorize",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "{{ACCESS_TOKEN}}",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "callBackUrl",
+							"type": "any"
+						},
+						{
+							"key": "clientAuth",
+							"type": "any"
+						},
+						{
+							"key": "grantType",
+							"type": "any"
+						},
+						{
+							"key": "scope",
+							"type": "any"
+						},
+						{
+							"key": "username",
+							"type": "any"
+						},
+						{
+							"key": "password",
+							"type": "any"
+						},
+						{
+							"key": "redirectUri",
+							"type": "any"
+						},
+						{
+							"key": "refreshToken",
+							"type": "any"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{api_key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/v1/transfer/?select=transferId,source,target,type,amount,labels,error&transferId={{TRANSFER_ID}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"transfer",
+						""
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "transferId,source,target,type,amount,labels,error"
+						},
+						{
+							"key": "transferId",
+							"value": "{{TRANSFER_ID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "09. accept a transfer",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenName",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "{{ACCESS_TOKEN}}",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "callBackUrl",
+							"type": "any"
+						},
+						{
+							"key": "authUrl",
+							"type": "any"
+						},
+						{
+							"key": "clientAuth",
+							"type": "any"
+						},
+						{
+							"key": "grantType",
+							"type": "any"
+						},
+						{
+							"key": "scope",
+							"type": "any"
+						},
+						{
+							"key": "username",
+							"type": "any"
+						},
+						{
+							"key": "password",
+							"type": "any"
+						},
+						{
+							"key": "redirectUri",
+							"type": "any"
+						},
+						{
+							"key": "refreshToken",
+							"type": "any"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"signer\": {\n\t\t\"handle\": \"wVSwfi7NpUAgeyifnjy5yJ1ZbrBdp6frja\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{url}}/v1/transfer/{{TRANSFER_ID}}/accept",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"transfer",
+						"{{TRANSFER_ID}}",
+						"accept"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10. get list of actions",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Set action IDs\", function () {",
+							"    const { entities } = pm.response.json();",
+							"",
+							"    const uploadAction = entities.find((action) => getActionType(action) === 'UPLOAD')",
+							"    pm.globals.set(\"UPLOAD_ACTION_ID\", uploadAction.action_id)",
+							"",
+							"    const sendAction = entities.find(action => getActionType(action) === 'SEND')",
+							"    pm.globals.set(\"SEND_ACTION_ID\", sendAction.action_id)",
+							"",
+							"    const downloadAction = entities.find(action => getActionType(action) === 'DOWNLOAD')",
+							"    pm.globals.set(\"DOWNLOAD_ACTION_ID\", downloadAction.action_id)",
+							"});",
+							"",
+							"function getActionType(action) {",
+							"    if (action.labels && action.labels.type) {",
+							"        return action.labels.type",
+							"    }",
+							"    return action.type",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "challengeAlgorithm",
+							"value": "S256",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "{{ACCESS_TOKEN}}",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{api_key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/v1/action?select=action_id,sourceSigner,targetSigner,sourceBank,targetBank,type,status&sort=DESC&sortBy=updated&transferId={{TRANSFER_ID}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"action"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "action_id,sourceSigner,targetSigner,sourceBank,targetBank,type,status"
+						},
+						{
+							"key": "sort",
+							"value": "DESC"
+						},
+						{
+							"key": "sortBy",
+							"value": "updated"
+						},
+						{
+							"key": "transferId",
+							"value": "{{TRANSFER_ID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
