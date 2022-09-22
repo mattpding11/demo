@@ -74,7 +74,7 @@ Asynchronous steps
 ```
 {
     source: 'source-user-signer-handle',
-    target: 'target-user-wallet-handle', // take a look 
+    target: 'target-user-wallet-handle', 
     amount: '1000.00',
     domain: 'tin'
 }
